@@ -1,0 +1,29 @@
+## SEARCHING
+
+GET lat={LAT}&lon={LON}
+GET lat={LAT}&lon={LON}&query={QUERY}
+GET lat={LAT}&lon={LON}&{FILTERNAME1}={VAL}&{FILTERNAME2}={VAL}
+GET lat={LAT}&lon={LON}&query={QUERY}&{FILTERNAME1}=true&{FILTERNAME2}=true
+
+# FILTERNAMES
+
+minrating    =3
+openat       ={SQL TIMESTAMP}
+
+## POSTING
+
+POST
+Content-Type = application/json
+Data:
+{
+    "rating" = 3
+}
+
+{
+    "rating" = 4, 
+    "review" = "foo bar baz"
+}
+
+{
+    "review" = "foo bar"
+}
