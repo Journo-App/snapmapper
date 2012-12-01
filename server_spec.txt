@@ -12,6 +12,8 @@ openat       ={SQL TIMESTAMP}
 
 ## POSTING
 
+# RATINGS/REVIEWS
+
 POST
 Content-Type = application/json
 Data:
@@ -27,3 +29,8 @@ Data:
 {
     "review" = "foo bar"
 }
+
+# PHOTOS
+
+POST
+(tbd)

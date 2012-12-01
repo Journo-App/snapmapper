@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= SnapMapper Home
+  form(action='/location', method='post')
+    p
+      label Location
+      input (type='text', name='locationBox', value='', id='locationBox')
+      a (href='#' data-role='button' data-icon='search')
+  p
+    #map
