@@ -1,0 +1,4 @@
+{
+  "mongourl": "mongo://localhost/snapmapper",
+  "port": 9002
+}
