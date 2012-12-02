@@ -1,9 +1,15 @@
 ## SEARCHING
 
-GET lat={LAT}&lon={LON}
-GET lat={LAT}&lon={LON}&query={QUERY}
-GET lat={LAT}&lon={LON}&{FILTERNAME1}={VAL}&{FILTERNAME2}={VAL}
-GET lat={LAT}&lon={LON}&query={QUERY}&{FILTERNAME1}=true&{FILTERNAME2}=true
+POST /getMap
+Data:
+{
+  loc: [lat, lon],
+  radius: radiusInDegrees,
+  filters:
+    { filter object }
+  query: "foo bar baz"
+}
+
 
 # FILTERNAMES
 
