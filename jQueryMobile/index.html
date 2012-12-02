@@ -117,7 +117,7 @@
 			<div data-role="fieldcontain">
 			    <fieldset data-role="controlgroup" data-type="horizontal">
 			     	<legend>Filter results by:</legend>
-			         	<input type="radio" name="Score" id="radio-choice-score" value="off"" />
+			         	<input type="radio" name="Score" id="radio-choice-score" value="off" />
 			         	<label for="radio-choice-score">Score</label>
 			         	<input type="radio" name="radio-choice-b" id="radio-choice-d" value="off" />
 			         	<label for="radio-choice-d">Grid</label>
@@ -140,6 +140,38 @@
 			</div><!-- /footer -->
 		</section>
 	<!-- End of Filter Page -->
+	
+	
+		
+	<!-- List results Page -->
+		<section id="listResultsPage" data-role="page" data-theme="a">
+			<div id="header" data-role="header" data-position="inline">
+				<a href="#homePage" data-icon="home" data-iconpos="notext">Home</a>
+				<h1>SNAPMapper</h1>
+				<a href="#aboutPage" data-rel="dialog" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
+			</div>
+			<div data-role="content" data-theme="a">
+				
+			<div id="resultsList">
+			
+			<!-- use a javascript callback function to build this list programmatically -- see dan -->
+			
+			</div>
+
+			 <!-- footer -->
+			 <div data-role="footer" data-position="fixed">		
+				 <div data-role="navbar" data-iconpos="top">
+					 <ul>
+						 <li><a href="#searchPage" data-icon="search">Search</a></li>
+						 <li><a href="#" data-icon="grid" class="ui-btn-active ui-state-persist">Filter</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</section>
+	<!-- End of List Results Page -->
+	
+	
+	
 	
 	
 	<!-- Single Business Page -->
