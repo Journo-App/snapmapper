@@ -1,5 +1,4 @@
 var http = require("http")
-  , service = require("service/service");
 
 function map( response, postData ) {
   getMap( postData['loc'], postData['radius'], postData['filters'], 
@@ -10,6 +9,8 @@ function map( response, postData ) {
           });
 
 }
+
+exports.map = map;
 
 function get( response, pathname ) {
   path.exists( pathname, function(exists) {
@@ -30,6 +31,4 @@ function get( response, pathname ) {
   });
 }
 
-exports.start = start;
-exports.get = get;
-
+exports.get = get

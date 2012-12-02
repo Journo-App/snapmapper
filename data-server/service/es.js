@@ -1,6 +1,6 @@
 'use strict';
 
-var esCli = require('elasticsearchclient');
+var esCli = require('elasticsearchclient')
   , config = require('../config')
   , es
   , serverOptions

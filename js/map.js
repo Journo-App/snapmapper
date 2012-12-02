@@ -14,6 +14,8 @@ if (navigator.geolocation) {
 
             loadmap(latlon);
 
+            getMap([position.coords.latitude, position.coords.longitude]);
+
         },
         function (error) {
             console.log("oh shit: ", error);

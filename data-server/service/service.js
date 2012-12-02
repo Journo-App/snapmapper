@@ -1,5 +1,5 @@
-var db = require('db')
-  , es = require('es');
+var db = require('./db')
+  , es = require('./es');
 
 
 function getMap( loc, radius, filters, query, cb ) {
@@ -30,7 +30,7 @@ function getMap( loc, radius, filters, query, cb ) {
 
   // call to es
   esQuery = {
-    review = query
+    review: query
   }
   esResults = '';
   es.search('reviews', 'text', esQuery)
@@ -45,11 +45,13 @@ function getMap( loc, radius, filters, query, cb ) {
     .exec();
 }
 
+module.exports.getMap = getMap;
+
 
 function postReview( businessId, reviewText, cb ) {
   esPost = {
-    id = businessId,
-    review = reviewText
+    id: businessId,
+    review: reviewText
   }
   es.index('reviews', 'text', esPost)
     .on('data', function(data) {
@@ -58,6 +60,8 @@ function postReview( businessId, reviewText, cb ) {
     .exec();
 }
 
+module.exports.postReview = postReview;
+
 
 function postRating( businessId, ratingsData, cb ) {
   options = {
@@ -65,3 +69,5 @@ function postRating( businessId, ratingsData, cb ) {
   }
   db.collection('businessData').insert(docObj, options, cb);
 }
+
+module.exports.postRating = postRating;
