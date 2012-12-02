@@ -9,14 +9,12 @@ map = new google.maps.Map(
         {
             zoom: 11,
             center: new google.maps.LatLng(
-                40.700683,
-                -73.925972
+                37.7750,
+                122.4183
                 ),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
 );
-
-
 
 if (navigator.geolocation) {
     var locationMarker = null;
@@ -56,5 +54,25 @@ if (navigator.geolocation) {
             enableHighAccuracy: true
         }
     );
+}
 
+//This will allow the map to be rendered on the screen
+new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+//Used to fine the Geolocation of a request
+if(google.loader.ClientLocation)
+{
+    visitor_lat = google.loader.ClientLocation.latitude;
+    visitor_lon = google.loader.ClientLocation.longitude;
+    visitor_city = google.loader.ClientLocation.address.city;
+    visitor_region = google.loader.ClientLocation.address.region;
+    visitor_country = google.loader.ClientLocation.address.country;
+    visitor_countrycode = google.loader.ClientLocation.address.country_code;
+//	document.getElementById('yourinfo').innerHTML = '<p>Lat/Lon: ' + visitor_lat + ' / ' + visitor_lon + '</p><p>Location: ' + visitor_city + ', ' + visitor_region + ', ' + visitor_country + ' (' + visitor_countrycode + ')</p>';
+}
+else
+{
+    // ClientLocation not found or not populated
+    // so perform error handling
+//	document.getElementById('yourinfo').innerHTML = '<p>Whoops!</p>';
 }
