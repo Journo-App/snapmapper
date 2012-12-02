@@ -3,7 +3,7 @@
 // mock out your functions in service
 // define what parameters there will be, and what data will 
 // be returned
-exports.myFunction = function(param1, param2, cb) {
+exports.getMap = function(loc, radius, filters, query, cb) {
 
   var result = {
     places: [
@@ -20,3 +20,4 @@ exports.myFunction = function(param1, param2, cb) {
   };
   return cb(null, result);
 }
+

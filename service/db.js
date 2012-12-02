@@ -5,6 +5,7 @@ var mongoskin = require('mongoskin')
   , db
   ;
 
-db = mongoskin.db(config.mongourl);
+db = mongoskin.db(config.username + ":" +  config.password + "@" 
+        + config.mongourl + ":" + config.port);
 
 module.exports = db;
