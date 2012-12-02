@@ -1,14 +1,1 @@
-extends layout
-
-block content
-
-  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAslE8QQxx84OH9WXd7XFIegZ6gS0YdQ-w&sensor=true")
-
-  h1 SnapMapper Home
-  form(action='/location', method='post')
-    p
-      label Location
-      input (type='text', name='locationBox', value='', id='locationBox')
-      a(href='#', data-role='button', data-icon='search') Search
-
-    div#map(style="height:400px")
+include index.html

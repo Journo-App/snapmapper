@@ -11,6 +11,16 @@ app = express();
 app.configure(function() {
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
+  /*
+  app.set('view engine', {layout: false});
+  app.engine('html', {
+    compile: function(str, options) {
+      return function(locals) {
+        return str;
+      };
+    }
+  });
+  */
   app.use(connectAssets());
   app.use(express.cookieParser());
   app.use(express.bodyParser());
