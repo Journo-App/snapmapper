@@ -1,10 +1,14 @@
-// Get the map container node.
-var mapContainer = $( "#map" );
 
 // Create the new Goole map controller using our
 // map (pass in the actual DOM object). Center it
 // above the first Geolocated IP address.
-map = new google.maps.Map(
+$(document).ready(function(){
+
+
+// Get the map container node.
+var mapContainer = $( "#map" );
+
+var map = new google.maps.Map(
         mapContainer[ 0 ],
         {
             zoom: 11,
@@ -17,7 +21,6 @@ map = new google.maps.Map(
 );
 
 
-
 if (navigator.geolocation) {
     var locationMarker = null;
 
@@ -27,7 +30,7 @@ if (navigator.geolocation) {
         // callback - the error handler - and the third
         // argument - our configuration options - are optional.
         navigator.geolocation.getCurrentPosition(
-                function( position ){
+            function( position ){
 
                 // Check to see if there is already a location.
                 // There is a bug in FireFox where this gets
@@ -38,15 +41,17 @@ if (navigator.geolocation) {
 
                 // Log that this is the initial position.
                 console.log( "Initial Position Found" );
+                var here = new google.maps.LatLng(position.coords.latitude,
+                    position.coords.longitude);
 
+                map.setCenter(here);
                 // Add a marker to the map using the position.
-                locationMarker = addMarker(
-                    position.coords.latitude,
-                    position.coords.longitude,
-                    "Initial Position"
-                    );
-
-                },
+                locationMarker = new google.maps.Marker({
+                    map: map,
+                    position: here,
+                    animation:google.maps.Animation.DROP
+                } );
+            },
         function( error ){
             console.log( "Something went wrong: ", error );
         },
@@ -58,3 +63,5 @@ if (navigator.geolocation) {
     );
 
 }
+
+});
