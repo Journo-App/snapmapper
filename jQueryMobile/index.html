@@ -36,58 +36,110 @@
 	<body>
 	
 	<!-- Home -->
-		<div id="homePage" data-role="page" data-theme="a">
+		<section id="homePage" data-role="page" data-theme="a">
 			<div id="header" data-role="header" data-position="inline">
+				<a href="#aboutPage" data-rel="dialog" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
 				<h1>SNAPMapper</h1>
 			</div>
 			<div data-role="content" data-theme="a">
                 								
 				<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
-					<div id="map_canvas" style="width:100%; height:300px;"></div>
+					<div id="map_canvas" style="width:100%; height:300px;"><a href="#bizPage" data-transition="pop">link</a></div>
 				</div>
 
-			</div>
-			 	<div data-role="footer" class="ui-bar" data-position="fixed">
-                    <a href="#searchPage" data-role="button" data-icon="search">Search</a>
-                    <a href="#listPage" data-role="button" data-icon="grid">List</a>
-				 </div>
-		</div>
+			 <!-- footer -->
+			 <div data-role="footer" data-position="fixed">		
+				 <div data-role="navbar" data-iconpos="top">
+					 <ul>
+						 <li><a href="#searchPage" data-icon="search">Search</a></li>
+						 <li><a href="#listPage" data-icon="grid">List</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+			
+		</section>
 	<!-- End of Home -->
 	
 	
+    <!-- This is the About SNAPMapper page -->
+    <section id="aboutPage" data-role="page">
+        <header data-role="header" data-theme="a">
+        <h1>SNAPMapper</h1>
+        </header>
+     
+        <div data-role="content" style="background-image: url(jquery.mobile/images/white_background.png)">
+        <p>CreditCalx was developed by Oakland Tribune reporter Angela Woodall, interaction designer Dan Turner, TKTKTKTKTK</p>
+		<p>The goal is to TKTKTKTKTK. For more info, visit TKTKTK.</p>
+
+        </div>    
+    </section>
+    <!-- End of About -->
+	
+	
 	<!-- Search by Tags Page -->
-		<div id="searchPage" data-role="page" data-theme="a">
+		<section id="searchPage" data-role="page" data-theme="a">
 			<div id="header" data-role="header" data-position="inline">
-			<a href="#homePage" data-icon="home">Home</a>
+				<a href="#homePage" data-icon="home" data-iconpos="notext">Home</a>
 				<h1>SNAPMapper</h1>
+				<a href="#aboutPage" data-rel="dialog" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
 			</div>
 			<div data-role="content" data-theme="a">
 						<p>Search Tags Page</p>
-			<div data-role="footer" class="ui-bar" data-position="fixed">
+			<!-- <div data-role="footer" class="ui-bar" data-position="fixed">
 			 	<a href="#searchPage" data-role="button" data-icon="search" class="ui-btn-active ui-state-persist">Search</a>
 			 	<a href="#listPage" data-role="button" data-icon="grid">List</a>
-			 </div>
-		</div>
-	<!-- End of Second Page -->
+			 </div> -->
+			 <!-- footer -->
+			 <div data-role="footer" data-position="fixed">		
+				 <div data-role="navbar" data-iconpos="top">
+					 <ul>
+						 <li><a href="#" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
+						 <li><a href="#listPage" data-icon="grid">List</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</section>
+	<!-- End of Tags Page -->
 	
 	
 		
-	<!-- Filters Page -->
-		<div id="listPage" data-role="page" data-theme="a">
+	<!-- List Page -->
+		<section id="listPage" data-role="page" data-theme="a">
 			<div id="header" data-role="header" data-position="inline">
+				<a href="#homePage" data-icon="home" data-iconpos="notext">Home</a>
 				<h1>SNAPMapper</h1>
+				<a href="#aboutPage" data-rel="dialog" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
 			</div>
 			<div data-role="content" data-theme="a">
-						<p>Filters Page</p>
+						<p>List Page</p>
 
 
+			 <!-- footer -->
+			 <div data-role="footer" data-position="fixed">		
+				 <div data-role="navbar" data-iconpos="top">
+					 <ul>
+						 <li><a href="#searchPage" data-icon="search">Search</a></li>
+						 <li><a href="#" data-icon="grid" class="ui-btn-active ui-state-persist">List</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</section>
+	<!-- End of List Page -->
+	
+	
+	<!-- Single Business Page -->
+		<section id="bizPage" data-role="page" data-theme="a">
+			<div id="header" data-role="header" data-position="inline">
+				<a href="#homePage" data-icon="home" data-iconpos="notext">Home</a>
+				<h1>SNAPMapper</h1>
+				<a href="#aboutPage" data-rel="dialog" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
 			</div>
-			<div data-role="footer" class="ui-bar" data-position="fixed">
-			 	<a href="#searchPage" data-role="button" data-icon="search">Search</a>
-			 	<a href="#listPage" data-role="button" data-icon="grid" class="ui-btn-active ui-state-persist">List</a>
-			 </div>
-		</div>
-	<!-- End of Second Page -->
+			<div data-role="content" data-theme="a">
+						<p>A business page</p>
+
+
+		</section>
+	<!-- End of Biz Page -->
 
 
 
