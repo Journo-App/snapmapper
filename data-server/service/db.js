@@ -9,6 +9,5 @@ var mongoskin = require('mongoskin')
 url = config.username + ":" +  config.password + "@" 
       + config.mongourl + ":" + config.port + "/snapmapper";
 
-console.log(url);
 db = mongoskin.db(url, {safe:false});
 module.exports = db;

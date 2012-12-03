@@ -3,7 +3,7 @@ var db = require('./db')
 
 
 function getMap( loc, radius, filters, query, cb ) {
-  var locQuery, esQuery, esResults, done, getMapResult;
+  var locQuery, esQuery, esResults, done, getMapResult = {};
 
   // function to count completed calls - need 2
   done = (function() {
@@ -11,6 +11,7 @@ function getMap( loc, radius, filters, query, cb ) {
     var numDone = 0;
     return function() {
       if (++numDone == calls) {
+        console.log("done");
         cb (getMapResult);
       }
     };
@@ -19,11 +20,14 @@ function getMap( loc, radius, filters, query, cb ) {
   // call to mongo
   locQuery = {
     loc: {
-        $near: loc,
-        $maxDistance: radius
+        geoNear: "snapmapperC",
+        near: loc,
+        maxDistance: radius
     }
   }
-  db.places.find(locQuery, function(results) {
+  db.executeDbCommand(locQuery, function(err, results) {
+    if (err) { return "oh shit: " + err.message }
+    console.log("msResults: " + JSON.stringify(results));
     getMapResult.mapResults = results;
     done();
   });
@@ -35,11 +39,11 @@ function getMap( loc, radius, filters, query, cb ) {
   esResults = '';
   es.search('reviews', 'text', esQuery)
     .on('data', function(data) {
-        results += JSON.parse(data);
+        esResults += data;
     })
     .on('done', function() {
-        console.log(JSON.parse(results));
-        getMapResult.searchResults = results;
+        console.log("esResults: " + JSON.stringify(esResults));
+        getMapResult.searchResults = esResults;
         done();
     })
     .exec();
@@ -55,7 +59,7 @@ function postReview( businessId, reviewText, cb ) {
   }
   es.index('reviews', 'text', esPost)
     .on('data', function(data) {
-        console.log(data)
+        console.log("es data: " + data)
     })
     .exec();
 }
