@@ -1,6 +1,7 @@
 var dataServerAddress = "http://localhost:9999/";
 
-function getMap( loc, radius, filters, query, cb ) {
+function getMapData( loc, radius, filters, query, cb ) {
+  console.log("getMapData called!");
   // set defaults
   if (!radius) {
     radius = 5;

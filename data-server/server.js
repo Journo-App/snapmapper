@@ -21,7 +21,7 @@ function start( route, handle ) {
 
     }
     http.createServer( onRequest ).listen(9999);
-    console.log("Server running on 9999");
+    console.log("Data server running on 9999");
 }
 
 exports.start = start;
