@@ -1,4 +1,4 @@
-var dataServerAddress = "http://localhost:9999/";
+var dataServerAddress = "http://50.116.14.106:9999/";
 
 function getMapData( loc, radius, filters, query, cb ) {
   console.log("getMapData called!");

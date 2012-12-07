@@ -5,6 +5,8 @@ var db = require('./db')
 function getMap( loc, radius, filters, query, cb ) {
   var locQuery, esQuery, esResults, done, getMapResult = {};
 
+  console.log("service/getMap() called with loc = " + loc);
+
   // function to count completed calls - need 2
   done = (function() {
     var calls = 2;
@@ -47,6 +49,8 @@ function getMap( loc, radius, filters, query, cb ) {
         done();
     })
     .exec();
+
+    console.log("calls dispached");
 }
 
 module.exports.getMap = getMap;

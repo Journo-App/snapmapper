@@ -1,39 +1,39 @@
 var locationMarker = null
   , latlon;
 
-if (navigator.geolocation) {
+  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
         function (position) {
-            if (locationMarker) {
-                return;
-            }
+          if (locationMarker) {
+            return;
+          }
 
-            console.log("initial position found");
+          console.log("initial position found");
 
-            latlon = '' + position.coords.latitude + ',' + position.coords.longitude;
+          latlon = '' + position.coords.latitude + ',' + position.coords.longitude;
 
-            loadmap(latlon);
+          loadmap(latlon);
 
-            getMapData([position.coords.latitude, position.coords.longitude], undefined, undefined, undefined, function() {
-		console.log("getMapData callback reached!");
-		});
-
+          getMapData([position.coords.latitude, position.coords.longitude], undefined, undefined, undefined, function() {
+            console.log("getMapData callback reached!");
+          });
         },
         function (error) {
-            console.log("oh shit: ", error);
+          console.log("oh shit: ", error);
         },
         {
-            timeout: (5 * 1000),
-            maximumAge: (1000 * 60 * 15),
-            enableHighAccuracy: true
+          timeout: (5 * 1000),
+          maximumAge: (1000 * 60 * 15),
+          enableHighAccuracy: true
         }
     );
-}
-
+  }
 
 
 function loadmap(latlon) {
+    console.log("loadmap called with latlon = " + latlon);
     $('#map_canvas').gmap({'center': latlon }).bind('init', function () {
+        console.log("loadmap gmap cb fcn called");
         $('#map_canvas').gmap('addMarker', { 'foo': 'bar', 'position': '37.810733, -122.270651' });
         $('#map_canvas').gmap('addMarker', { 'foo': 'baz', 'position': '58.3426606750, 18.0736160278' });
         $('#map_canvas').gmap('find', 'markers', { 'property': 'foo', 'value': 'bar' }, function(marker, found) {
