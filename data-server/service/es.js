@@ -7,7 +7,7 @@ var esCli = require('elasticsearchclient')
   ;
 
 serverOptions = {
-    host: '50.116.14.106',
+    host: '127.0.0.1',
     port: 9200
 };
 
