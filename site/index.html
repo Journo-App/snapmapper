@@ -245,32 +245,61 @@
 				</div>
 			</div>
 
-
-
-
-<!-- <div class="Clear">
-    Rating 1:
-    (N/M/Y)
-    <input class="star" type="radio" name="test-1-rating-1" value="N" title="No"/>
-    <input class="star" type="radio" name="test-1-rating-1" value="M" title="Maybe"/>
-    <input class="star" type="radio" name="test-1-rating-1" value="Y" title="Yes"/>
-   </div>
-   <br/>
-   <div class="Clear">
-    Rating 2:
-    (10 - 50)
-    <input class="star" type="radio" name="test-1-rating-2" value="10"/>
-    <input class="star" type="radio" name="test-1-rating-2" value="20"/>
-    <input class="star" type="radio" name="test-1-rating-2" value="30"/>
-    <input class="star" type="radio" name="test-1-rating-2" value="40"/>
-    <input class="star" type="radio" name="test-1-rating-2" value="50"/>
-   </div> -->
+			<!-- Radio buttons for ratings -->
+		
+		<div class="styled">	
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Score:</legend>
+    <input class="star" type="radio" name="score-rating-1" value="1"/>
+    <input class="star" type="radio" name="score-rating-1" value="2"/>
+    <input class="star" type="radio" name="score-rating-1" value="3"/>
+    <input class="star" type="radio" name="score-rating-1" value="4"/>
+    <input class="star" type="radio" name="score-rating-1" value="5"/>
+			</fieldset>
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Price:</legend>
+    <input class="star" type="radio" name="price-rating-1" value="$"/>
+    <input class="star" type="radio" name="price-rating-1" value="$$"/>
+    <input class="star" type="radio" name="price-rating-1" value="$$$"/>
+			</fieldset>
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Variety:</legend>
+    <input class="star" type="radio" name="variety-rating-1" value="1"/>
+    <input class="star" type="radio" name="variety-rating-1" value="2"/>
+    <input class="star" type="radio" name="variety-rating-1" value="3"/>
+    <input class="star" type="radio" name="variety-rating-1" value="4"/>
+    <input class="star" type="radio" name="variety-rating-1" value="5"/>
+			</fieldset>
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Service:</legend>
+    <input class="star" type="radio" name="service-rating-1" value="1"/>
+    <input class="star" type="radio" name="service-rating-1" value="2"/>
+    <input class="star" type="radio" name="service-rating-1" value="3"/>
+    <input class="star" type="radio" name="service-rating-1" value="4"/>
+    <input class="star" type="radio" name="service-rating-1" value="5"/>
+			</fieldset>
+			<label for="flip-2">Children's food available:</label>
+			<select name="flip-2" id="flip-2" data-role="slider">
+			<option value="no">No</option>
+			<option value="yes">Yes</option>
+			</select> 
+		</div>
 			
+			<!-- End of radio buttons for ratings -->
+			<br />
 			
-			<div id="bizContent" class="styled">
+			<!-- User comments textarea -->
+			<label for="bizComment" class="ui-input-text">Enter your review here</label>
+
+			<textarea name="bizCommment" class="styled" id="textarea-comments">
+			</textarea>
 			
+		</div>
+			<!-- End user comments textarea -->
+			<div data-role="controlgroup" data-type="horizontal" align=center>
+				<input type="reset" value="Reset" /></a>
+				<input type="submit" value="Submit" /></a>
 			</div>
-
 
 		</section>
 	<!-- End of Enter Review Page -->
