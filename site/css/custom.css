@@ -26,7 +26,8 @@ textarea.styled {
 	background-color: white;
 	background-position: bottom right;
 	background-repeat: no-repeat;
-	font-family: Asap, black;
+	font-family: Asap;
+	color:#363636;
 }
 
 .bizSmall {
@@ -36,7 +37,7 @@ textarea.styled {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-	padding: 3px;
+	padding: 5px;
 	background-color: white;
 	background-position: bottom right;
 	background-repeat: no-repeat;
