@@ -10,11 +10,14 @@ var locationMarker = null
 
           console.log("initial position found");
 
-          latlon = '' + position.coords.latitude + ',' + position.coords.longitude;
+          lat = position.coords.latitude;
+          lon = position.coords.longitude;
+
+          latlon = '' + lat + ',' + lon;
 
           loadmap(latlon);
 
-          getMapData([position.coords.latitude, position.coords.longitude], undefined, undefined, undefined, function() {
+          getMapData([lat, lon], undefined, undefined, undefined, function() {
             console.log("getMapData callback reached!");
           });
         },

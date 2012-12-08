@@ -1,39 +1,57 @@
-var db = require('./db')
+var mongo = require('./mongo')
   , es = require('./es');
 
 
-function getMap( loc, radius, filters, query, cb ) {
-  var locQuery, esQuery, esResults, done, getMapResult = {};
+function getMap( locString, radius, filters, query, cb ) {
+  var loc, locQuery, esQuery, esResults, done, getMapResult = {};
 
-  console.log("service/getMap() called with loc = " + loc);
+  console.log("service/getMap() called with loc = " + locString);
 
+  loc = JSON.parse( locString );
+/*
   // function to count completed calls - need 2
   done = (function() {
-    var calls = 2;
+    var calls = 1;
     var numDone = 0;
     return function() {
+      console.log("done " + numDone);
       if (++numDone == calls) {
-        console.log("done");
         cb (getMapResult);
       }
     };
   })();
-
+*/
   // call to mongo
-  locQuery = {
-    loc: {
-        geoNear: "snapmapperC",
-        near: loc,
-        maxDistance: radius
+  mongo.execute( function( err, db ) {
+    var collection, locQuery, stream, result = [];
+    if( err ) { return console.log("oh shit: " + err); }
+
+    collection = db.collection("snapmapperC");
+    locQuery = {
+      loc: {
+          '$near': loc,
+          '$maxDistance': radius
+      }
     }
-  }
-  db.executeDbCommand(locQuery, function(err, results) {
+    stream = collection.find( locQuery ).stream();
+    stream.on('data', function( item ) {
+      result.append( item );
+    });
+    stream.on('end', function() {
+      cb( null, result );
+    });
+
+  })
+ /* 
+  * mongo callback:
+  function(err, results) {
     if (err) { return "oh shit: " + err.message }
     console.log("msResults: " + JSON.stringify(results));
     getMapResult.mapResults = results;
     done();
   });
-
+*/
+/*
   // call to es
   esQuery = {
     review: query
@@ -49,8 +67,8 @@ function getMap( loc, radius, filters, query, cb ) {
         done();
     })
     .exec();
+*/
 
-    console.log("calls dispached");
 }
 
 module.exports.getMap = getMap;
