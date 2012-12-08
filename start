@@ -1,5 +1,5 @@
 #!/bin/sh
 killall java
 killall node
-nohup /usr/local/share/elasticsearch/bin/elasticsearch > es.log
-nohup node index.js > node.log
+nohup /usr/local/share/elasticsearch/bin/elasticsearch > es.log &
+nohup node index.js > node.log &
