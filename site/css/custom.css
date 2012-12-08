@@ -1,4 +1,5 @@
 
+//Specific Content Styles
 
 textarea.styled {
 	width: 90%;
@@ -28,6 +29,25 @@ textarea.styled {
 	font-family: Asap, black;
 }
 
+.bizSmall {
+	width: 90%;
+	height: 80px;
+	border: 3px solid #cccccc;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	padding: 3px;
+	background-color: white;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	font-family: Asap;
+	color:#363636;
+	text-shadow: none;
+	text-indent: 2px;
+}
+
+// End of Specific Content Styles
+
 .ui-header .ui-title, .ui-footer .ui-title {
     display: block;
     font-size: 1em;
@@ -50,3 +70,7 @@ textarea.styled {
 .rounded { border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; -khtml-border-radius: 8px; }
 .shadow { -moz-box-shadow: 0px 2px 4px #999; -webkit-box-shadow: 0px 2px 4px #999; box-shadow: 0px 2px 4px #999; }
 .item { padding:1em; margin:0 0 2em; }
+
+
+
+
