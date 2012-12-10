@@ -13,6 +13,7 @@ textarea.styled {
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	font-family: Asap, black;
+	text-shadow: none;
 }
 
 .styled {
@@ -28,6 +29,7 @@ textarea.styled {
 	background-repeat: no-repeat;
 	font-family: Asap;
 	color:#363636;
+	text-shadow: none;
 }
 
 .bizSmall {
