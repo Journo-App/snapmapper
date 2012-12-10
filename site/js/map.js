@@ -39,6 +39,7 @@ function loadmap(latlon) {
         console.log("loadmap gmap cb fcn called");
         $('#map_canvas').gmap('addMarker', { 'foo': 'bar', 'position': '37.810733, -122.270651' });
         $('#map_canvas').gmap('addMarker', { 'foo': 'baz', 'position': '58.3426606750, 18.0736160278' });
+        $('#map_canvas').gmap('option', 'zoom', 11);
         $('#map_canvas').gmap('find', 'markers', { 'property': 'foo', 'value': 'bar' }, function(marker, found) {
             marker.setVisible(found);
         });
