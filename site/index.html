@@ -233,8 +233,21 @@
 			</div>
 			
 			<div data-role="content" data-theme="a">
+			
+			<div class="styled">
+			<ul data-role="listview" data-filter="false" align="left">
+				<li>
+					<a href="#bizPage" onclick="showBiz(name)">
+				<!-- NEED TO CREATE showBiz function, with the name of each business from the db -->
+					<h3>Business Name</h3>
+					<img src="photo.png" alt="business photo" height="30px" />
+					<p>Business Address</p>
+					</a>
+					</li>
+			</ul>
+			</div>
 						
-			<div id="bizSmall" class="bizSmall" class"ui-grid-a">
+<!--			<div id="bizSmall" class="bizSmall" class"ui-grid-a">
 				<div id="bizInfo" class="ui-block-a" style="width:70%">
 				<h2 id="bizNameSmall">Biz Name</h2>
 				<h3 id="bizAddressSmall">Biz Address</h3>
@@ -242,7 +255,7 @@
 				
 				<div id="bizPhotoSmall" class="ui-block-b" style="float:right;">
 				<p>img goes here</p>
-				</div>
+				</div> -->
 			</div>
 
 			<!-- Radio buttons for ratings -->
