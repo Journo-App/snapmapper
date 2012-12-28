@@ -38,7 +38,7 @@ function getMap( locString, radius, filters, query, cb ) {
       result.append( item );
     });
     stream.on('end', function() {
-      cb( null, result );
+      cb( result );
     });
 
   })
@@ -71,7 +71,7 @@ function getMap( locString, radius, filters, query, cb ) {
 
 }
 
-module.exports.getMap = getMap;
+exports.getMap = getMap;
 
 
 function postReview( businessId, reviewText, cb ) {
@@ -86,7 +86,7 @@ function postReview( businessId, reviewText, cb ) {
     .exec();
 }
 
-module.exports.postReview = postReview;
+exports.postReview = postReview;
 
 
 function postRating( businessId, ratingsData, cb ) {
@@ -96,4 +96,4 @@ function postRating( businessId, ratingsData, cb ) {
   db.collection('businessData').insert(docObj, options, cb);
 }
 
-module.exports.postRating = postRating;
+exports.postRating = postRating;

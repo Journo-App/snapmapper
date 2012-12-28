@@ -17,6 +17,12 @@ function getMapData( loc, radius, filters, query, cb ) {
   $.post( dataServerAddress + "getMap", JSON.stringify(data), cb )
 }
 
+
+function getBusinessData( businessId, cb ) {
+  pass;
+}
+
+
 function postReview( businessId, reviewText, cb ) {
   pass;
 }

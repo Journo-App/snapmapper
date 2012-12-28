@@ -4,9 +4,9 @@ var siteServer = require("./site/server")
   , requestHandlers = require("./data-server/requestHandlers");
 
 var handle = {
-    "/getMap": requestHandlers.map,
-    "/business": requestHandlers.getBiz,
-    "/review": requestHandlers.postBiz
+    "/getMap": requestHandlers.getMap,
+    "/business": requestHandlers.getBusiness,
+    "/review": requestHandlers.postReview
 }
 
 siteServer.start();
